@@ -52,7 +52,7 @@ public class MemberDAOImpl implements MemberDAO {
 				PreparedStatement pstmt = conn.prepareStatement(SQL_ADD)){
 			pstmt.setString(1, member.getEmail());
 			pstmt.setString(2, BCrypt.hashpw(member.getPasswd(), BCrypt.gensalt()));
-			pstmt.setString(3, member.getEmail());
+			pstmt.setString(3, member.getName());
 			return pstmt.executeUpdate() > 0;
 		}
 		
