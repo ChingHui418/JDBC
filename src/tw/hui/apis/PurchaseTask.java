@@ -12,7 +12,7 @@ public class PurchaseTask implements Task {
 	@Override
 	public void execute(StoreService service) throws Exception {
 		try {
-			service.restock(PRODUCT_ID, qty);
+			service.purchase(PRODUCT_ID, qty);
 		}catch(NotEnoughExecption e) {
 			System.out.println("不足" + qty);
 		}
